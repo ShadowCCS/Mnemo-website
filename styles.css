@@ -1,0 +1,176 @@
+/* 
+  Custom styles for Mnemo App.
+  Tailwind CSS is currently loaded via CDN in index.html.
+*/
+
+body {
+    background-color: #f8fafc;
+    /* slate-50 */
+    color: #0f172a;
+    /* slate-900 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-dots {
+    background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.rotate-y-12 {
+    transform: rotateY(12deg) rotateX(5deg);
+}
+
+.hero-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotateY(12deg) rotateX(5deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotateY(12deg) rotateX(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotateY(12deg) rotateX(5deg);
+    }
+}
+
+@keyframes gradient-x {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient-x {
+    background-size: 200% auto;
+    animation: gradient-x 4s linear infinite;
+}
+
+@keyframes blob-bounce {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.animate-blob {
+    animation: blob-bounce 10s infinite ease-in-out;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* Floating animations for Mindmap */
+@keyframes float-slow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float-slow {
+    animation: float-slow 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float-slow 5s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.animate-float-slower {
+    animation: float-slow 7s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.animate-float-delayed-more {
+    animation: float-slow 6s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-100 {
+    transition-delay: 0.1s;
+}
+
+.reveal-delay-200 {
+    transition-delay: 0.2s;
+}
+
+.reveal-delay-300 {
+    transition-delay: 0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.shadow-soft {
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
